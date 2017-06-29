@@ -9,8 +9,18 @@ class Restaurants extends Component {
   }
 
   render () {
+    const { restaurants } = this.props;
+    console.log(restaurants);
     return (
       <section className="Restaurants">
+        { map(restaurants, (restaurant, key) => {
+          console.log(restaurant);
+            return (
+              <Restaurant key={key} {...restaurant} />
+            );  
+        }
+
+            ) }
       </section>
     );
   }

@@ -16,8 +16,7 @@ class Restaurants extends Component {
 
   handleSelect(key) {
     const currentUser = this.props.user;
-    console.log(this.props)
-    console.log(currentUser)
+
     this.restaurantsRef
       .child(key)
       .child('votes')
@@ -29,6 +28,7 @@ class Restaurants extends Component {
 
   handleDeselect(key) {
     const currentUser = this.props.user;
+    
     this.restaurantsRef
       .child(key)
       .child('votes')
@@ -37,7 +37,7 @@ class Restaurants extends Component {
   }
 
   render () {
-    const { restaurants } = this.props;
+    const { restaurants, user } = this.props;
     
     return (
       <section className="Restaurants">
@@ -47,6 +47,7 @@ class Restaurants extends Component {
               <Restaurant 
                 key={key}
                 {...restaurant} 
+                currentUser={user}
                 handleDeselect={ () => this.handleDeselect(key) }
                 handleSelect={ () => this.handleSelect(key) }
               />

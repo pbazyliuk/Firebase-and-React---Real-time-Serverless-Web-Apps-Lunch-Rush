@@ -11,10 +11,7 @@ class NewRestaurant extends Component {
 
     this.restaurantsRef = database.ref('/restaurants');
     this.handleSubmit = this.handleSubmit.bind(this);
-
-    this.restaurantsRef = database.ref('/restaurants');
   }
-  
 
   handleSubmit(event) {
     event.preventDefault();
